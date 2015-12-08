@@ -23,14 +23,14 @@ From command line, generate a YAML file of a given directory:
 .. code-block:: bash
 
     $ dir2yaml /path/to/foobar
-    $ Dictionary written to foobar.yaml
+    Dictionary written to foobar.yaml
 
 Also works in reverse:
 
 .. code-block:: bash
 
     $ yaml2dir foobar.yaml
-    $ Directory created at /path/to/foobar
+    Directory created at /path/to/foobar
 
 
 Installation
