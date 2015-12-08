@@ -39,4 +39,4 @@ To install Pyvert, simply:
 
 .. code-block:: bash
 
-    $ pip install requests
+    $ pip install pyvert

@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pyvert',
-      version='0.2',
+      version='0.3',
       description='pyvert is a tool to convert a filesystem directory structure to and from YAML',
       url='http://github.com/blaketmiller/pyvert',
       author='Blake Miller',
