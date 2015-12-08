@@ -3,21 +3,41 @@
 import os
 import sys
 import yaml
+import argparse
 from pyvert import convert_dir
 
-if len(sys.argv) == 1:
-    p = os.getcwd()
-elif len(sys.argv) == 2:
-    p = os.path.abspath(sys.argv[1])
-else:
-    sys.stderr.write("Unexpected argument {}\n".format(sys.argv[2:]))
 
-try:
-    with open("{}.yaml".format(os.path.basename(p)), "w") as f:
-        try:
-            yaml.dump(convert_dir.to_dict(path=p), f, default_flow_style=False)
-            print("Dictionary written to {}.yaml".format(os.path.basename(p)))
-        except Exception as e:
-            print(e)
-except Exception as e:
-    print(e)
+def main():
+
+    parser = argparse.ArgumentParser(description='generate a YAML file from'
+                                                 ' a given directory path')
+
+    parser.add_argument('path',
+                        nargs='?',
+                        help='path of target directory (leave empty to use '
+                             'current directory)')
+    args = parser.parse_args()
+
+    p = os.getcwd() if not args.path else os.path.abspath(args.path)
+
+    if not os.path.exists(p):
+        print("Path {} does not exist".format(p))
+        sys.exit(1)
+
+    try:
+        with open('{}.yaml'.format(os.path.basename(p)), 'w') as f:
+            try:
+                yaml.dump(convert_dir.to_dict(path=p), f, default_flow_style=False)
+                print('Dictionary written to {}.yaml'.format(os.path.basename(p)))
+                sys.exit(0)
+
+            except Exception as e:
+                print(e)
+                sys.exit(2)
+
+    except Exception as e:
+        print(e)
+        sys.exit(3)
+
+if __name__ == '__main__':
+    main()
