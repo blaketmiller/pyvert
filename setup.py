@@ -8,4 +8,5 @@ setup(name='pyvert',
       author_email='blakethomasmiller@gmail.com',
       license='GNU GPL v2.0',
       packages=['pyvert'],
+      scripts=['bin/dir2yaml', 'bin/yaml2dir'],
       zip_safe=False)
