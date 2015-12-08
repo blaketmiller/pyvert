@@ -4,7 +4,13 @@ import os
 
 
 def to_dir(data, path=str()):
-    """dict_to_dir expects data to be a dictionary with one top-level key."""
+    """
+    Return the top-level key of the passed dictionary
+
+    Keyword arguments:
+    data -- a dictionary with one top-level key
+    path -- a system path as a string
+    """
 
     dest = os.path.join(os.getcwd(), path)
 

@@ -4,6 +4,12 @@ import os
 
 
 def to_dict(path):
+    """
+    Return the dictionary created by recursively walking directory
+
+    Keyword arguments:
+    path -- a system path as a string
+    """
 
     directory = {}
 
