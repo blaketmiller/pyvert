@@ -8,7 +8,7 @@ Modules
 -------
 For converting a directory to a dict, use convert_dir:
 
-.. code-block: python
+.. code-block:: python
 
     >>> from pyvert import convert_dir
     >>> foo = convert_dir.to_dict("/path/to/directory")
@@ -20,14 +20,14 @@ Scripts
 -------
 From command line, generate a YAML file of a given directory:
 
-.. code-block: bash
+.. code-block:: bash
 
     $ dir2yaml /path/to/foobar
     $ Dictionary written to foobar.yaml
 
 Also works in reverse:
 
-.. code-block: bash
+.. code-block:: bash
 
     $ yaml2dir foobar.yaml
     $ Directory created at /path/to/foobar
