@@ -3,7 +3,7 @@
 import os
 import sys
 import yaml
-import pyvert
+from pyvert import convert_dict
 
 if len(sys.argv) == 1:
     sys.stderr.write("Too few arguments\n")
@@ -22,7 +22,7 @@ try:
     with open(y, "r") as f:
         try:
             d = yaml.load(f)
-            dest = pyvert.dict_to_dir(data=d, path=p)
+            dest = convert_dict.to_dir(data=d, path=p)
             print("Directory created at {}".format(p if p else os.path.join(os.getcwd(), dest)))
         except Exception as e:
             print(e)

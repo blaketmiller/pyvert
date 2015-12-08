@@ -3,7 +3,7 @@
 import os
 import sys
 import yaml
-import pyvert
+from pyvert import convert_dir
 
 if len(sys.argv) == 1:
     p = os.getcwd()
@@ -15,7 +15,7 @@ else:
 try:
     with open("{}.yaml".format(os.path.basename(p)), "w") as f:
         try:
-            yaml.dump(pyvert.dir_to_dict(path=p), f, default_flow_style=False)
+            yaml.dump(convert_dir.to_dict(path=p), f, default_flow_style=False)
             print("Dictionary written to {}.yaml".format(os.path.basename(p)))
         except Exception as e:
             print(e)

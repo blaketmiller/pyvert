@@ -3,7 +3,7 @@
 import os
 
 
-def dir_to_dict(path):
+def to_dict(path):
 
     directory = {}
 
@@ -13,7 +13,7 @@ def dir_to_dict(path):
 
         if dirnames:
             for d in dirnames:
-                directory[dn].append(dir_to_dict(path=os.path.join(path, d)))
+                directory[dn].append(to_dict(path=os.path.join(path, d)))
 
             for f in filenames:
                 directory[dn].append(f)

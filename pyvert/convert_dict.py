@@ -3,7 +3,7 @@
 import os
 
 
-def dict_to_dir(data, path=str()):
+def to_dir(data, path=str()):
     """dict_to_dir expects data to be a dictionary with one top-level key."""
 
     dest = os.path.join(os.getcwd(), path)
@@ -11,12 +11,12 @@ def dict_to_dir(data, path=str()):
     if isinstance(data, dict):
         for k, v in data.items():
             os.makedirs(os.path.join(dest, k))
-            dict_to_dir(v, os.path.join(path, str(k)))
+            to_dir(v, os.path.join(path, str(k)))
 
     elif isinstance(data, list):
         for i in data:
             if isinstance(i, dict):
-                dict_to_dir(i, path)
+                to_dir(i, path)
             else:
                 with open(os.path.join(dest, i), "a"):
                     os.utime(os.path.join(dest, i), None)
