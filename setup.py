@@ -6,7 +6,7 @@ def readme():
         return f.read()
 
 setup(name='pyvert',
-      version='0.3',
+      version='0.4',
       description='pyvert is a tool to convert a filesystem directory structure to and from YAML',
       long_description=readme(),
       classifiers=['Intended Audience :: Developers',
